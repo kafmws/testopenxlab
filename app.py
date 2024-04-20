@@ -8,6 +8,8 @@ base_path = './repo'
 os.system(f'git clone https://code.openxlab.org.cn/kafm/self-perception.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 
+base_path += '/final_model'
+
 tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
 
