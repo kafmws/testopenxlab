@@ -1,10 +1,11 @@
 import gradio as gr
 import os
+os.system('pip install --force-reinstall torch==2.0.1')
 import torch
+print(torch.__version__)
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 from openxlab.model import download
 
-os.system('pip install --force-reinstall torch==2.0.1')
 
 base_path = './repo'
 os.system(f'git clone https://code.openxlab.org.cn/kafm/self-perception.git {base_path}')
