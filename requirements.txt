@@ -5,4 +5,4 @@ einops
 accelerate
 tiktoken
 torch
-torchvision
+setuptools==60.2.0
