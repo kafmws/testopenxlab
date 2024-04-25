@@ -15,6 +15,7 @@ base_path += '/final_model'
 
 tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
+print('model path' + base_path)
 
 def chat(message,history):
     for response,history in model.stream_chat(tokenizer,message,history,max_length=2048,top_p=0.7,temperature=1):
